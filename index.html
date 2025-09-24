@@ -22,9 +22,11 @@
 
   <section class="hero-section w-full h-dvh flex items-center overflow-hidden justify-center relative">
 
-    <div class="flex md:item-center items-end justify-center h-dvh absolute md:h-[150vh] md:top-0 overflow-hidden w-full">
+    <div
+      class="flex md:item-center items-end justify-center h-dvh absolute md:h-[150vh] md:top-0 overflow-hidden w-full">
       <div data-parallax data-speed="0.03">
-        <img data-aos="fade" src="/images/Hero_Spin.png" class="slow-spin w-[150vw] scale-200 md:scale-110 md:h-[150vh]" alt="">
+        <img data-aos="fade" src="/images/Hero_Spin.png" class="slow-spin w-[150vw] scale-200 md:scale-110 md:h-[150vh]"
+          alt="">
       </div>
     </div>
 
@@ -61,10 +63,10 @@
         </div>
 
         <!-- Center (Mary first) -->
-        <div
+        <div data-parallax data-speed="0.06"
           class="flex item-center justify-center md:w-full scale-140 md:scale-100 w-40 md:max-w-[14vw] relative z-40 flex-col">
           <!-- Logo bubble comes right after Mary -->
-          <div data-aos="fade" data-aos-delay="1000" data-parallax data-speed="0.06" class="absolute animate-floating z-50 md:-top-32 -top-20">
+          <div data-aos="fade" data-aos-delay="1000" class="absolute animate-floating z-50 md:-top-32 -top-20">
             <div class="relative">
               <img src="/images/LogoBubble_BG.png" class="md:scale-190 scale-150" alt="">
               <div class="flex absolute md:-top-2 top-0 md:gap-6 gap-2 flex-col">
@@ -91,44 +93,8 @@
 
   </section>
 
-
-
-
-  <script>
-    (() => {
-      const els = Array.from(document.querySelectorAll('[data-parallax]'));
-      if (!els.length) return;
-
-      // Reduce intensity a bit on small screens
-      const scale = window.matchMedia('(max-width: 768px)').matches ? 0.7 : 1;
-
-      let lastY = window.scrollY, ticking = false;
-
-      function onScroll() {
-        lastY = window.scrollY;
-        if (!ticking) {
-          window.requestAnimationFrame(apply);
-          ticking = true;
-        }
-      }
-
-      function apply() {
-        els.forEach(el => {
-          const s = parseFloat(el.dataset.speed || '0.1') * scale;
-          el.style.transform = `translate3d(0, ${lastY * s}px, 0)`;
-        });
-        ticking = false;
-      }
-
-      window.addEventListener('scroll', onScroll, { passive: true });
-      // Initial position
-      apply();
-    })();
-  </script>
-
-
-  <section class="section2 relative overflow-x-hidden bg-gradient-to-b from-[#3a5074] to-[#69afa1] md:min-h-screen">
-
+  <section class="section2 relative overflow-x-hidden bg-gradient-to-b from-[#53789e] to-[#69afa1] md:min-h-screen">
+    <div class="custom-border w-full top-0 left-0 w-full h-1 bg-[#572500]"></div>
     <div class="main md:min-h-screen pt-20 ">
       <div class="flex items-center justify-between gap-4 px-4">
         <!-- Left line + dot -->
@@ -139,7 +105,7 @@
 
         <!-- Title -->
         <h2 data-aos="fade-up"
-          class="font-bold text-stroke md:text-5xl text-4xl md:text-6xl text-[#fdeac4] leading-none young">
+          class="font-bold trailer text-stroke md:text-5xl text-4xl md:text-6xl text-[#fdeac4] leading-none young">
           Trailer
         </h2>
 
@@ -176,29 +142,31 @@
   </section>
 
   <section class="overflow-x-hidden md:pb-20 pb-10 bg-[#ffbb47] min-h-screen relative">
-
     <img src="/images/drawing1.png" class="absolute top-80 left-10 w-[30vw] opacity-20" alt="">
     <img src="/images/drawing2.png" class="absolute bottom-[35rem] right-0 w-[30vw] opacity-20" alt="">
 
     <div class="bg-gradient-to-b from-[#d7695a] to-transparent absolute top-0 left-0 w-full h-40"></div>
+
+    <div class="custom-border absolute w-full top-0 left-0 w-full h-1 bg-[#572500]"></div>
+
     <div class="main relative min-h-screen pt-20 ">
       <div class="flex items-center justify-between gap-4 px-4">
         <!-- Left line + dot -->
         <div data-aos="zoom-in-right" class="relative flex item-center justify-center gap-4">
-          <div class="h-[3px] bg-[#F6D9A8]/90 md:w-48 md:w-20 w-5 mt-1"></div>
-          <div class="w-3 h-3 rounded-full bg-[#F6D9A8]/90"></div>
+          <div class="h-[3px] bg-[#F6D9A8]/90 md:w-48 md:w-20 sm:w-5 mt-1"></div>
+          <div class="sm:w-3 sm:h-3 rounded-full bg-[#F6D9A8]/90"></div>
         </div>
 
         <!-- Title -->
         <h2 data-aos="fade-up"
-          class="font-bold md:text-5xl text-2xl text-nowrap md:text-6xl text-[#fdeac4] text-stroke young">
+          class="font-bold game-feature md:text-5xl text-2xl text-nowrap md:text-6xl text-[#fdeac4] young">
           Game Feature
         </h2>
 
         <!-- Right line + dot -->
         <div data-aos="zoom-in-left" class="relative flex item-center justify-center gap-4">
-          <div class="w-3 h-3 rounded-full bg-[#F6D9A8]/90"></div>
-          <div class="h-[3px] bg-[#F6D9A8]/90 md:w-48 md:w-20 w-5 mt-1"></div>
+          <div class="sm:w-3 sm:h-3 rounded-full bg-[#F6D9A8]/90"></div>
+          <div class="h-[3px] bg-[#F6D9A8]/90 md:w-48 md:w-20 sm:w-5 mt-1"></div>
         </div>
       </div>
 
@@ -263,45 +231,62 @@
     </div>
   </section>
 
-  <section data-aos="fade" class="md:h-screen">
-    <div class="swiper mySwiper h-full">
+  <section data-aos="fade" class="md:h-screen relative">
+    <div class="w-full absolute z-30 top-0 left-0 w-full h-1 bg-[#572500]"></div>
+
+    <div class="swiper mySwiper h-full relative">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="/ss/ss01.jpg" class="w-full h-full object-bottom block" alt="">
-        </div>
-        <div class="swiper-slide"><img src="/ss/ss02.jpg" class="w-full h-full object-bottom block" alt="">
-        </div>
-        <div class="swiper-slide"><img src="/ss/ss03.jpg" class="w-full h-full object-bottom block" alt="">
-        </div>
-        <div class="swiper-slide"><img src="/ss/ss04.jpg" class="w-full h-full object-bottom block" alt="">
-        </div>
-        <div class="swiper-slide"><img src="/ss/ss05.jpg" class="w-full h-full object-bottom block" alt="">
-        </div>
-        <div class="swiper-slide"><img src="/ss/ss06.jpg" class="w-full h-full object-bottom block" alt="">
-        </div>
-        <div class="swiper-slide"><img src="/ss/ss07.jpg" class="w-full h-full object-bottom block" alt="">
-        </div>
-        <div class="swiper-slide"><img src="/ss/ss08.jpg" class="w-full h-full object-bottom block" alt="">
-        </div>
-        <div class="swiper-slide"><img src="/ss/ss09.jpg" class="w-full h-full object-bottom block" alt="">
-        </div>
-        <div class="swiper-slide"><img src="/ss/ss10.jpg" class="w-full h-full object-bottom block" alt="">
-        </div>
+        <!-- your slides -->
+        <div class="swiper-slide"><img src="/ss/ss01.jpg" class="w-full h-full object-bottom block" alt=""></div>
+        <div class="swiper-slide"><img src="/ss/ss02.jpg" class="w-full h-full object-bottom block" alt=""></div>
+        <div class="swiper-slide"><img src="/ss/ss03.jpg" class="w-full h-full object-bottom block" alt=""></div>
+        <div class="swiper-slide"><img src="/ss/ss04.jpg" class="w-full h-full object-bottom block" alt=""></div>
+        <div class="swiper-slide"><img src="/ss/ss05.jpg" class="w-full h-full object-bottom block" alt=""></div>
+        <div class="swiper-slide"><img src="/ss/ss06.jpg" class="w-full h-full object-bottom block" alt=""></div>
+        <div class="swiper-slide"><img src="/ss/ss07.jpg" class="w-full h-full object-bottom block" alt=""></div>
+        <div class="swiper-slide"><img src="/ss/ss08.jpg" class="w-full h-full object-bottom block" alt=""></div>
+        <div class="swiper-slide"><img src="/ss/ss09.jpg" class="w-full h-full object-bottom block" alt=""></div>
+        <div class="swiper-slide"><img src="/ss/ss10.jpg" class="w-full h-full object-bottom block" alt=""></div>
       </div>
 
+      <!-- Custom pagination bullets -->
       <div id="customPagination" class="absolute left-1/2 -translate-x-1/2 md:bottom-5 bottom-3 z-50
                 flex items-center justify-center md:gap-2 gap-1"></div>
+
+      <!-- Custom left/right nav (uses your images) -->
+      <div class="absolute inset-0 z-50 pointer-events-none">
+        <button id="prevBtn" class="pointer-events-auto absolute left-2 md:left-6 top-1/2 -translate-y-1/2
+                     p-2 md:p-3 rounded-2xl bg-black/20 hover:bg-black/30 backdrop-blur
+                     shadow-lg transition active:scale-95">
+          <img src="/images/Slider_Left.png" alt="Previous slide" class="h-6 w-6 md:h-10 md:w-10 select-none"
+            draggable="false">
+        </button>
+
+        <button id="nextBtn" class="pointer-events-auto absolute right-2 md:right-6 top-1/2 -translate-y-1/2
+                     p-2 md:p-3 rounded-2xl bg-black/20 hover:bg-black/30 backdrop-blur
+                     shadow-lg transition active:scale-95">
+          <img src="/images/Slider_Right.png" alt="Next slide" class="h-6 w-6 md:h-10 md:w-10 select-none"
+            draggable="false">
+        </button>
+      </div>
     </div>
   </section>
 
-  <section class="section2 overflow-x-hidden bg-gradient-to-b from-[#3a5074] to-[#69afa1] min-h-screen">
+
+  <section class="section2 overflow-x-hidden bg-gradient-to-b from-[#53789e] relative to-[#69afa1] min-h-screen">
+    <div class="custom-border w-full top-0 left-0 w-full h-1 bg-[#572500]"></div>
     <div class="main min-h-screen py-20 flex item-center flex-col justify-between md:gap-10 gap-20">
 
-      <div data-aos="fade-down" class="flex relative item-center justify-center">
-        <img src="/images/cat.png" class="h-14 -top-12 absolute" alt="">
-        <a href="https://store.steampowered.com/app/2653470/Little_Problems_A_Cozy_Detective_Game"
-          class="bg-white transition-all duration-500 hover:scale-105 block border-3 border-zinc-800 rounded-xl shadow-2xl px-7 py-3.5 flex items-center gap-2 justify-center font-semibold text-xl  ">
-          <img src="/images/Steam_64.png" class="h-10" alt="">
-          Play on Stream</a>
+      <div data-aos="fade-down" class="">
+        <div class="flex item-center justify-center">
+          <div class="relative flex item-center justify-center transition-all duration-500 hover:scale-105 ">
+            <img src="/images/cat.png" class="h-14 -top-12 absolute" alt="">
+            <a href="https://store.steampowered.com/app/2653470/Little_Problems_A_Cozy_Detective_Game"
+              class="bg-white  block border-3 border-zinc-800 rounded-xl shadow-2xl px-7 py-3.5 flex items-center gap-2 justify-center font-semibold text-xl  ">
+              <img src="/images/Steam_64.png" class="h-10" alt="">
+              Play on Stream</a>
+          </div>
+        </div>
       </div>
 
       <div class="">
