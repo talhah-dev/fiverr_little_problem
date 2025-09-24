@@ -1,124 +1,76 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Swiper – Triangle Pagination</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Little Problems: A Cozy Detective Game</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-  <!-- Tailwind (CDN) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper@10/swiper-bundle.min.css" />
-
-  <!-- Layout helpers via Tailwind -->
-  <style type="text/tailwindcss">
-    @layer components {
-      .mySwiper { @apply w-full h-full; }
-      .mySwiper .swiper-slide img { @apply w-full h-full object-cover; }
-      .swiper-pagination-custom {
-        @apply absolute left-1/2 -translate-x-1/2 bottom-4 md:bottom-6 flex items-center z-10;
-      }
-    }
-  </style>
-
-  <!-- Bullet override (AFTER Swiper CSS) -->
-  <style>
-    :root{
-      --ui-brown:#3C1B1B;  /* outline/dash */
-      --ui-cream:#FBECCB;  /* fill */
-      --ui-active:#6B3B2D; /* active inner */
-    }
-
-    /* Reset Swiper defaults (force override) */
-    .mySwiper .swiper-pagination-bullet{
-      width: 24px !important;   /* box for triangle */
-      height: 18px !important;
-      margin: 0 18px !important;
-      background: transparent !important;
-      border-radius: 0 !important;
-      opacity: 1 !important;
-      position: relative !important;
-    }
-
-    /* Outer triangle (outline) */
-    .mySwiper .swiper-pagination-bullet::before{
-      content:"";
-      position:absolute; inset:0;
-      background: var(--ui-brown);
-      clip-path: polygon(50% 0, 0 100%, 100% 100%);
-      border-radius: 2px;
-    }
-
-    /* Inner triangle (fill) */
-    .mySwiper .swiper-pagination-bullet::after{
-      content:"";
-      position:absolute;
-      /* tweak these to change border thickness */
-      inset: 3px 4px 4px 4px;
-      background: var(--ui-cream);
-      clip-path: polygon(50% 0, 0 100%, 100% 100%);
-      border-radius: 2px;
-    }
-
-    /* Active bullet – inner becomes brown */
-    .mySwiper .swiper-pagination-bullet.swiper-pagination-bullet-active::after{
-      background: var(--ui-active);
-    }
-
-    /* Dash between bullets */
-    .mySwiper .swiper-pagination-bullet:not(:last-child){
-      --dash-w: 22px; --dash-h: 2px;
-    }
-    .mySwiper .swiper-pagination-bullet:not(:last-child) > i{
-      position:absolute; top:75%; left:calc(100% + 6px);
-      width: var(--dash-w); height: var(--dash-h);
-      background: var(--ui-brown);
-      transform: translateY(-50%);
-      opacity:.95; pointer-events:none;
-      content:"";
-      display:block;
-    }
-  </style>
 </head>
-<body class="antialiased bg-neutral-800">
-  <section class="h-screen">
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="https://images.unsplash.com/photo-1618336753974-aae8e04506aa?q=80&w=1600&auto=format&fit=crop" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img src="https://images.unsplash.com/photo-1516383607781-913a19294fd1?q=80&w=1600&auto=format&fit=crop" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img src="https://images.unsplash.com/photo-1502139214985-d4d2ba36c223?q=80&w=1600&auto=format&fit=crop" alt="">
-        </div>
-      </div>
 
-      <!-- Pagination -->
-      <div class="swiper-pagination swiper-pagination-custom"></div>
+<body>
+
+
+  <div class="h-screen bg-red-500"></div>
+  <section class="hero-section w-full h-dvh flex items-center overflow-hidden justify-center relative">
+
+    <div class="flex item-center justify-center h-dvh absolute overflow-hidden w-full">
+      <img src="/images/Hero_Spin.png" class="animate- spin h-full" alt="">
     </div>
-  </section>
 
-  <!-- Swiper JS -->
-  <script src="https://unpkg.com/swiper@10/swiper-bundle.min.js"></script>
+    <div data-aos="fade-up" class="flex item-center absolute z-50 bottom-10 justify-center">
+      <a href=""
+        class="bg-white block border-3 border-zinc-800 rounded-xl shadow-2xl px-7 py-3.5 flex items-center gap-2 text-nowrap justify-center font-semibold text-xl  ">
+        <img src="/images/Steam_64.png" class="h-10" alt="">
+        Play on Stream</a>
+    </div>
+
+    <div class="flex item-center justify-center w-full">
+      <div class="absolute bottom-0 max-w-7xl w-full flex justify-center items-end mx-auto">
+        <img data-aos-delay="300" data-aos="fade" src="/images/Hero_Ben.png"
+          class="md:w-full md:block hidden w-40 md:max-w-[17vw] !-mr-28" alt="">
+        <img data-aos-delay="100" data-aos="fade-up" src="/images/Hero_Ethan.png"
+          class="md:w-full w-[50vw] md:max-w-[15vw] z-30 !-mr-24" alt="">
+        <div
+          class="flex item-center justify-center md:w-full scale-140 md:scale-100 w-40 md:max-w-[14vw] relative z-40 flex-col">
+          <div data-aos-delay="500" data-aos="fade" class="absolute z-50 -top-26">
+            <div class="relative">
+              <img src="/images/LogoBubble_BG.png" class=" scale-150" alt="">
+              <div class="flex absolute top-0 gap-2 flex-col">
+                <img src="/images/LogoBubble_Little.png" alt="">
+                <img src="/images/LogoBubble_Problems.png" alt="">
+              </div>
+            </div>
+          </div>
+          <img src="/images/Hero_Mary.png" data-aos="fade-up" class="md:w-full w-40 md:max-w-[20rem] !-mb-4 z-40"
+            alt="">
+        </div>
+        <img data-aos-delay="100" data-aos="fade-up" src="/images/Hero_Silvia.png"
+          class="md:w-full w-[50vw] md:max-w-[15vw] z-30 !-ml-16" alt="">
+        <img data-aos-delay="300" data-aos="fade" src="/images/Hero_Luna.png"
+          class="md:w-full md:block hidden w-40 md:max-w-[17vw] !-ml-28" alt="">
+      </div>
+    </div>
+
+  </section>
+  <div class="h-screen bg-red-500"></div>
+  <div class="h-screen bg-red-500"></div>
+
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
-    new Swiper('.mySwiper', {
-      loop: true,
-      speed: 900,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        // Add a child <i> inside each bullet so we can draw the dash
-        renderBullet: (index, className) => `<span class="${className}"><i></i></span>`
-      }
+    AOS.init({
+      duration: 800,
+      once: false,
+      mirror: true,
     });
+
   </script>
+  <script src="./script.js"></script>
+
 </body>
+
 </html>

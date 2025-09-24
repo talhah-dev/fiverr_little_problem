@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Little Problems: A Cozy Detective Game</title>
 
   <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
@@ -12,106 +13,140 @@
   <link rel="stylesheet" href="./style.css">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
 
 <body>
 
 
-  <section class="hero-section w-full h-screen flex items-center overflow-hidden justify-center relative">
+  <section class="hero-section w-full h-dvh flex items-center overflow-hidden justify-center relative">
 
-    <div class="flex item-center justify-center h-screen absolute overflow-hidden w-full">
-      <img src="/images/Hero_Spin.png" class="animate- spin h-full" alt="">
+    <!-- Slow spinning background -->
+    <div class="flex item-center justify-center h-dvh absolute overflow-hidden w-full">
+      <img data-aos="fade" src="/images/Hero_Spin.png" class="slow-spin h-full" alt="">
     </div>
 
+    <!-- Play button -->
+    <div data-aos="fade-up" data-aos-delay="600" class="flex item-center absolute z-50 bottom-12 justify-center">
+      <a href="https://store.steampowered.com/app/2653470/Little_Problems_A_Cozy_Detective_Game"
+        class="bg-white block border-3 border-zinc-800 rounded-xl shadow-2xl px-7 py-3.5 flex items-center gap-2 text-nowrap justify-center font-semibold text-xl">
+        <img src="/images/Steam_64.png" class="h-10" alt="">
+        Play on Steam
+      </a>
+    </div>
+
+    <!-- Characters & logo -->
     <div class="flex item-center justify-center w-full">
       <div class="absolute bottom-0 max-w-7xl w-full flex justify-center items-end mx-auto">
-        <img src="/images/Hero_Ben.png" class="md:w-full md:block hidden w-40 md:max-w-[17vw] !-mr-28" alt="">
-        <img src="/images/Hero_Ethan.png" class="md:w-full w-40 md:max-w-[15vw] z-30 !-mr-24" alt="">
-        <div class="flex item-center justify-center md:w-full w-40 md:max-w-[14vw] relative z-40 flex-col">
-          <div class="absolute z-50 -top-26">
+
+        <!-- Leftmost character -->
+        <img data-aos="zoom-in-up" data-aos-delay="600" src="/images/Hero_Ben.png"
+          class="md:w-full md:block hidden w-40 md:max-w-[17vw] !-mr-28" alt="">
+
+        <!-- Left character -->
+        <img data-aos="zoom-in-up" data-aos-delay="300" src="/images/Hero_Ethan.png"
+          class="md:w-full w-[50vw] md:max-w-[15vw] z-30 !-mr-24" alt="">
+
+        <!-- Center (Mary first) -->
+        <div
+          class="flex item-center justify-center md:w-full scale-140 md:scale-100 w-40 md:max-w-[14vw] relative z-40 flex-col">
+          <!-- Logo bubble comes right after Mary -->
+          <div data-aos="fade" data-aos-delay="1000" class="absolute animate-floating z-50 -top-26">
             <div class="relative">
-              <img src="/images/LogoBubble_BG.png" class=" scale-150" alt="">
+              <img src="/images/LogoBubble_BG.png" class="scale-150" alt="">
               <div class="flex absolute top-0 gap-2 flex-col">
                 <img src="/images/LogoBubble_Little.png" alt="">
                 <img src="/images/LogoBubble_Problems.png" alt="">
               </div>
             </div>
           </div>
-          <img src="/images/Hero_Mary.png" class="md:w-full w-40 md:max-w-[20rem] !-mb-4 z-40" alt="">
+          <img src="/images/Hero_Mary.png" data-aos="zoom-in-up" data-aos-delay="50"
+            class="md:w-full w-40 md:max-w-[20rem] !-mb-4 z-40" alt="">
         </div>
-        <img src="/images/Hero_Silvia.png" class="md:w-full w-40 md:max-w-[15vw] z-30 !-ml-16" alt="">
-        <img src="/images/Hero_Luna.png" class="md:w-full md:block hidden w-40 md:max-w-[17vw] !-ml-28" alt="">
+
+        <!-- Right character -->
+        <img data-aos="zoom-in-up" data-aos-delay="300" src="/images/Hero_Silvia.png"
+          class="md:w-full w-[50vw] md:max-w-[15vw] z-30 !-ml-16" alt="">
+
+        <!-- Rightmost character -->
+        <img data-aos="zoom-in-up" data-aos-delay="600" src="/images/Hero_Luna.png"
+          class="md:w-full md:block hidden w-40 md:max-w-[17vw] !-ml-28" alt="">
       </div>
     </div>
 
   </section>
 
-  <section class="section2 overflow-x-hidden bg-gradient-to-b from-[#3a5074] to-[#69afa1] md:min-h-screen">
+
+  <section class="section2 relative overflow-x-hidden bg-gradient-to-b from-[#3a5074] to-[#69afa1] md:min-h-screen">
+
     <div class="main md:min-h-screen pt-20 ">
       <div class="flex items-center justify-between gap-4 px-4">
         <!-- Left line + dot -->
-        <div class="relative flex item-center justify-center gap-4">
+        <div data-aos="zoom-in-right" class="relative flex item-center justify-center gap-4">
           <div class="h-[3px] bg-[#F6D9A8]/90 md:w-48 sm:w-20 w-10 mt-1"></div>
           <div class="w-3 h-3 rounded-full bg-[#F6D9A8]/90"></div>
         </div>
 
         <!-- Title -->
-        <h2 class="font-extrabold md:text-5xl text-4xl md:text-6xl text-[#FBECCB] leading-none" style="
-        font-family: 'Shrikhand', system-ui, sans-serif;
-        -webkit-text-stroke: 3px #3C1B1B;  
-      ">
+        <h2 data-aos="fade-up" class="font-bold md:text-5xl text-4xl md:text-6xl text-[#FBECCB] leading-none young">
           Trailer
         </h2>
 
         <!-- Right line + dot -->
-        <div class="relative flex item-center justify-center gap-4">
+        <div data-aos="zoom-in-left" class="relative flex item-center justify-center gap-4">
           <div class="w-3 h-3 rounded-full bg-[#F6D9A8]/90"></div>
           <div class="h-[3px] bg-[#F6D9A8]/90 md:w-48 sm:w-20 w-10 mt-1"></div>
         </div>
       </div>
 
       <!-- Paragraph -->
-      <p class="max-w-5xl mx-auto mt-4 px-4 text-lg md:text-2xl text-white text-center font-medium">
+      <p data-aos="fade-up" data-aos-delay="200"
+        class="max-w-5xl mx-auto mt-4 px-4 text-lg md:text-2xl text-white text-center font-medium">
         Little Problems is a Cozy Detective game about solving minor inconveniences,
         everyday misunderstandings, and of course, little problems.
         This game is not about saving the world; it’s about enriching it, one case at a time.
       </p>
 
-      <div class="relative">
-        <img src="/images/Trailer_LaptopTable.png" class="w-full mt-20" alt="">
+      <div class="relative overflow-hidden">
+        <img data-aos="fade" src="/images/Trailer_LaptopTable.png" class="w-full mt-20" alt="">
 
-        <iframe class="absolute md:top-4 top-1 left-1/2 md:rounded-2xl rounded-md -translate-x-1/2 z-10 w-[56vw]"
-          style="aspect-ratio: 16/9; height: auto;" src="https://www.youtube.com/embed/O7Q2Vmf6TIk?si=nJ_g7yzqwBljljdX"
+        <iframe data-aos="fade"
+          class="absolute md:top-24 top-[5.5rem] left-1/2 md:rounded-2xl rounded-md -translate-x-1/2 z-10 w-[56vw]"
+          style="aspect-ratio: 16/9; height: auto;" src="https://www.youtube.com/embed/axCHAC2N6Lo?si=PyzV9kp4qgQ76qrt"
           title="YouTube video player" frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
         </iframe>
-        <img src="/images/Trailer_Cat.png" class="absolute z-10 bottom-0 left-0 w-[45vw]" alt="">
-        <img src="/images/Trailer_Books.png" class="absolute md:block hidden z-10 bottom-0 right-0 w-[35vw] -mr-60" alt="">
+        <img data-aos="zoom-in-up" src="/images/Trailer_Cat.png" class="absolute z-10 bottom-0 left-0 w-[45vw]" alt="">
+        <img data-aos="zoom-in-up" data-aos-delay="200" src="/images/Trailer_Books.png"
+          class="absolute md:block hidden z-10 bottom-0 right-0 w-[35vw] -mr-60" alt="">
       </div>
     </div>
   </section>
 
-  <section class="overflow-x-hidden bg-[#ffbb47] min-h-screen relative">
+  <section class="overflow-x-hidden md:pb-20 pb-10 bg-[#ffbb47] min-h-screen relative">
+
+    <img src="/images/drawing1.png" class="absolute top-80 left-10 w-[30vw] opacity-20" alt="">
+    <img src="/images/drawing2.png" class="absolute bottom-[35rem] right-0 w-[30vw] opacity-20" alt="">
+
     <div class="bg-gradient-to-b from-[#d7695a] to-transparent absolute top-0 left-0 w-full h-40"></div>
     <div class="main relative min-h-screen pt-20 ">
       <div class="flex items-center justify-between gap-4 px-4">
         <!-- Left line + dot -->
-        <div class="relative flex item-center justify-center gap-4">
+        <div data-aos="zoom-in-right" class="relative flex item-center justify-center gap-4">
           <div class="h-[3px] bg-[#F6D9A8]/90 md:w-48 md:w-20 w-5 mt-1"></div>
           <div class="w-3 h-3 rounded-full bg-[#F6D9A8]/90"></div>
         </div>
 
         <!-- Title -->
-        <h2 class="font-bold md:text-5xl text-2xl text-nowrap md:text-6xl text-[#FBECC B] text-white " style="
-        /* -webkit-text-stroke: 1px #3C1B1B;   */
-      ">
+        <h2 data-aos="fade-up"
+          class="font-bold md:text-5xl text-2xl text-nowrap md:text-6xl text-[#FBECC B] text-white young">
           Game Feature
         </h2>
 
         <!-- Right line + dot -->
-        <div class="relative flex item-center justify-center gap-4">
+        <div data-aos="zoom-in-left" class="relative flex item-center justify-center gap-4">
           <div class="w-3 h-3 rounded-full bg-[#F6D9A8]/90"></div>
           <div class="h-[3px] bg-[#F6D9A8]/90 md:w-48 md:w-20 w-5 mt-1"></div>
         </div>
@@ -119,7 +154,7 @@
 
 
       <div class="md:max-w-6xl relative mt-20 w-full mx-auto md:p-5">
-        <div
+        <div data-aos="zoom-in-up" data-aos-delay="300"
           class="md:max-w-[30%] max-w-[80%] -mb-5 z-20 bg-white mx-auto w-full rounded-2xl p-2 md:absolute top-0 relative left-0">
           <div class="md:p-6 p-4 rounded-2xl bg-[#fdf6eb] md:text-start text-center">
             <h3 class="text-[#331e17] font-extrabold md:text-2xl text-xl leading-tight mb-2">
@@ -130,7 +165,7 @@
             </p>
           </div>
         </div>
-        <div class="md:max-w-[80%] w-full md:mt-5 ml-auto bg-white p-2 md:rounded-2xl">
+        <div data-aos="zoom-in-up" class="md:max-w-[80%] w-full md:mt-5 ml-auto bg-white p-2 md:rounded-2xl">
           <img src="https://intoindiegames.com/wp-content/uploads/Screenshot-11340-1-1024x576.jpg"
             class="w-full h-full object-bottom object-cover block md:rounded-2xl" alt="">
         </div>
@@ -138,7 +173,7 @@
 
 
       <div class="md:max-w-6xl relative md:mt-20 mt-10 w-full mx-auto md:p-5">
-        <div
+        <div data-aos="zoom-in-up" data-aos-delay="300"
           class="md:max-w-[30%] max-w-[80%] -mb-5 z-20 bg-white mx-auto w-full rounded-2xl p-2 md:absolute top-0 relative right-0">
           <div class="md:p-6 p-4 rounded-2xl bg-[#fdf6eb] md:text-start text-center">
             <h3 class="text-[#331e17] font-extrabold md:text-2xl text-xl leading-tight mb-2">
@@ -149,15 +184,15 @@
             </p>
           </div>
         </div>
-        <div class="md:max-w-[80%] w-full md:mt-5 mr-auto bg-white p-2 md:rounded-2xl">
-          <img src="https://intoindiegames.com/wp-content/uploads/Screenshot-11340-1-1024x576.jpg"
+        <div data-aos="zoom-in-up" class="md:max-w-[80%] w-full md:mt-5 mr-auto bg-white p-2 md:rounded-2xl">
+          <img src="https://intoindiegames.com/wp-content/uploads/Screenshot-11319-1024x576.jpg"
             class="w-full h-full object-bottom object-cover block md:rounded-2xl" alt="">
         </div>
       </div>
 
 
       <div class="md:max-w-6xl relative md:mt-20 mt-10 w-full mx-auto md:p-5">
-        <div
+        <div data-aos="zoom-in-up" data-aos-delay="300"
           class="md:max-w-[30%] max-w-[80%] -mb-5 z-20 bg-white mx-auto w-full rounded-2xl p-2 md:absolute top-0 relative left-0">
           <div class="md:p-6 p-4 rounded-2xl bg-[#fdf6eb] md:text-start text-center">
             <h3 class="text-[#331e17] font-extrabold md:text-2xl text-xl leading-tight mb-2">
@@ -168,8 +203,9 @@
             </p>
           </div>
         </div>
-        <div class="md:max-w-[80%] w-full md:mt-5 ml-auto bg-white p-2 md:rounded-2xl">
-          <img src="https://intoindiegames.com/wp-content/uploads/Screenshot-11340-1-1024x576.jpg"
+        <div data-aos="zoom-in-up" data-aos-delay="300"
+          class="md:max-w-[80%] w-full md:mt-5 ml-auto bg-white p-2 md:rounded-2xl">
+          <img src="https://intoindiegames.com/wp-content/uploads/Screenshot-11595-1024x576.jpg"
             class="w-full h-full object-bottom object-cover block md:rounded-2xl" alt="">
         </div>
       </div>
@@ -177,32 +213,79 @@
     </div>
   </section>
 
-
-
-  <section class="h-screen relative">
+  <section data-aos="fade" class="">
     <div class="swiper mySwiper h-full">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img
-            src="https://intoindiegames.com/wp-content/uploads/Screenshot-11340-1-1024x576.jpg"
-            class="w-full h-full object-bottom object-cover block" alt="">
+        <div class="swiper-slide"><img src="/ss/ss01.jpg" class="w-full h-full object-bottom object-cover block" alt="">
         </div>
-        <div class="swiper-slide"><img src="https://intoindiegames.com/wp-content/uploads/Screenshot-11319-1024x576.jpg"
-            class="w-full h-full object-cover object-bottom block" alt="">
+        <div class="swiper-slide"><img src="/ss/ss02.jpg" class="w-full h-full object-cover object-bottom block" alt="">
         </div>
-        <div class="swiper-slide"><img src="https://intoindiegames.com/wp-content/uploads/Screenshot-11595-1024x576.jpg"
-            class="w-full h-full object-cover object-bottom block" alt="">
+        <div class="swiper-slide"><img src="/ss/ss03.jpg" class="w-full h-full object-cover object-bottom block" alt="">
         </div>
-        <div class="swiper-slide"><img src="https://intoindiegames.com/wp-content/uploads/Screenshot-11570-1024x576.jpg"
-            class="w-full h-full object-cover object-bottom block" alt="">
+        <div class="swiper-slide"><img src="/ss/ss04.jpg" class="w-full h-full object-cover object-bottom block" alt="">
+        </div>
+        <div class="swiper-slide"><img src="/ss/ss05.jpg" class="w-full h-full object-cover object-bottom block" alt="">
+        </div>
+        <div class="swiper-slide"><img src="/ss/ss06.jpg" class="w-full h-full object-cover object-bottom block" alt="">
+        </div>
+        <div class="swiper-slide"><img src="/ss/ss07.jpg" class="w-full h-full object-cover object-bottom block" alt="">
+        </div>
+        <div class="swiper-slide"><img src="/ss/ss08.jpg" class="w-full h-full object-cover object-bottom block" alt="">
+        </div>
+        <div class="swiper-slide"><img src="/ss/ss09.jpg" class="w-full h-full object-cover object-bottom block" alt="">
+        </div>
+        <div class="swiper-slide"><img src="/ss/ss10.jpg" class="w-full h-full object-cover object-bottom block" alt="">
         </div>
       </div>
 
-      <div id="customPagination" class="absolute left-1/2 -translate-x-1/2 bottom-5 z-50
-                flex items-center justify-center gap-2"></div>
+      <div id="customPagination" class="absolute left-1/2 -translate-x-1/2 md:bottom-5 bottom-3 z-50
+                flex items-center justify-center md:gap-2 gap-1"></div>
     </div>
   </section>
 
+  <section class="section2 overflow-x-hidden bg-gradient-to-b from-[#3a5074] to-[#69afa1] min-h-screen">
+    <div class="main min-h-screen py-20 flex item-center flex-col justify-between md:gap-10 gap-20">
 
+      <div data-aos="fade-down" class="flex relative item-center justify-center">
+        <img src="/images/cat.png" class="h-14 -top-12 absolute" alt="">
+        <a href="https://store.steampowered.com/app/2653470/Little_Problems_A_Cozy_Detective_Game"
+          class="bg-white block border-3 border-zinc-800 rounded-xl shadow-2xl px-7 py-3.5 flex items-center gap-2 justify-center font-semibold text-xl  ">
+          <img src="/images/Steam_64.png" class="h-10" alt="">
+          Play on Stream</a>
+      </div>
+
+      <div class="">
+        <div data-aos="fade-up" class="flex item-center justify-center gap-4">
+          <a href="https://discord.com/SE8Er6Hkh9" class="text-white font-semibold text-xl underline">Discord</a>
+          <div class="h-7 w-0.5 rounded-full bg-white"></div>
+          <a href="https://bsky.app/profile/littleproblems.bsky.social"
+            class="text-white font-semibold text-xl underline">Bluesky</a>
+          <div class="h-7 w-0.5 rounded-full bg-white"></div>
+          <a href="https://www.tiktok.com/@lilprobgame" class="text-white font-semibold text-xl underline">TikTok</a>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="200" class="flex item-center justify-center gap-4 mt-5">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdVr-oKUkQNJcJGTieBGOndriJdU6UPqeQK2Se_9-FOAlAicQ/viewform?pli=1"
+            class="text-white font-semibold text-xl underline">Contact Us</a>
+          <div class="h-7 w-0.5 rounded-full bg-white"></div>
+          <a href="https://drive.google.com/drive/folders/1KpAZR-ueg1SDZ2pzmHJ8ctPR1PdvUaz2?usp=drive_link"
+            class="text-white font-semibold text-xl underline">Download Press Kit </a>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-center gap-5 md:gap-20">
+        <a href="https://poshcat.studio/">
+          <img data-aos="zoom-in" src="/images/Footer_PoshCat.png" class=" h-40 md:h-[20vw]" alt="">
+        </a>
+        <a href="https://www.amplified.games/">
+          <img data-aos="zoom-in" data-aos-delay="200" src="/images/Footer_AG.png" class=" h-24 md:h-[15vw]" alt="">
+        </a>
+      </div>
+
+    </div>
+
+
+
+  </section>
 
   <!-- swiper -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -234,7 +317,7 @@
         const img = document.createElement('img');
         img.src = (i === swiper.realIndex) ? ACTIVE_SRC : INACTIVE_SRC;
         img.alt = `Go to slide ${i + 1}`;
-        img.className = 'h-5 md:h-6 cursor-pointer select-none';
+        img.className = 'h-3 md:h-6 cursor-pointer select-none';
         img.dataset.index = i;
         container.appendChild(img);
       }
@@ -273,8 +356,14 @@
     integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-
-
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: false,
+      mirror: true,
+    });
+  </script>
   <script src="./script.js"></script>
 
 </body>
