@@ -71,3 +71,8 @@
 .slow-spin {
   animation: slowSpin 20s linear infinite;
 }
+
+.text-stroke {
+  -webkit-text-stroke: 0.4px #370717;
+  text-stroke: 0.4px #370717;
+}
