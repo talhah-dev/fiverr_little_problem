@@ -30,7 +30,7 @@
     <!-- Play button -->
     <div data-aos="fade-up" data-aos-delay="600" class="flex item-center absolute z-50 bottom-12 justify-center">
       <a href="https://store.steampowered.com/app/2653470/Little_Problems_A_Cozy_Detective_Game"
-        class="bg-white block border-3 border-zinc-800 rounded-xl shadow-2xl px-7 py-3.5 flex items-center gap-2 text-nowrap justify-center font-semibold text-xl">
+        class="bg-white transition-all duration-500 hover:scale-105 block border-3 border-zinc-800 rounded-xl shadow-2xl px-7 py-3.5 flex items-center gap-2 text-nowrap justify-center font-semibold text-xl">
         <img src="/images/Steam_64.png" class="h-10" alt="">
         Play on Steam
       </a>
@@ -249,7 +249,7 @@
       <div data-aos="fade-down" class="flex relative item-center justify-center">
         <img src="/images/cat.png" class="h-14 -top-12 absolute" alt="">
         <a href="https://store.steampowered.com/app/2653470/Little_Problems_A_Cozy_Detective_Game"
-          class="bg-white block border-3 border-zinc-800 rounded-xl shadow-2xl px-7 py-3.5 flex items-center gap-2 justify-center font-semibold text-xl  ">
+          class="bg-white transition-all duration-500 hover:scale-105 block border-3 border-zinc-800 rounded-xl shadow-2xl px-7 py-3.5 flex items-center gap-2 justify-center font-semibold text-xl  ">
           <img src="/images/Steam_64.png" class="h-10" alt="">
           Play on Stream</a>
       </div>
@@ -282,71 +282,10 @@
       </div>
 
     </div>
-
-
-
   </section>
 
   <!-- swiper -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-  <script>
-    const INACTIVE_SRC = '/images/Slider_Bullet.png';
-    const ACTIVE_SRC = '/images/Slider_BulletActive.png';
-
-    const swiper = new Swiper('.mySwiper', {
-      loop: true,
-      speed: 700,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true
-      }
-    });
-
-    const container = document.getElementById('customPagination');
-
-    function getRealSlideCount() {
-      return document.querySelectorAll('.mySwiper .swiper-slide:not(.swiper-slide-duplicate)').length;
-    }
-
-    function buildBullets() {
-      const total = getRealSlideCount();
-      container.innerHTML = '';
-      for (let i = 0; i < total; i++) {
-        const img = document.createElement('img');
-        img.src = (i === swiper.realIndex) ? ACTIVE_SRC : INACTIVE_SRC;
-        img.alt = `Go to slide ${i + 1}`;
-        img.className = 'h-3 md:h-6 cursor-pointer select-none';
-        img.dataset.index = i;
-        container.appendChild(img);
-      }
-    }
-
-    function updateBullets() {
-      const imgs = container.querySelectorAll('img');
-      imgs.forEach((img, i) => {
-        img.src = (i === swiper.realIndex) ? ACTIVE_SRC : INACTIVE_SRC;
-      });
-    }
-
-    container.addEventListener('click', (e) => {
-      const t = e.target.closest('img');
-      if (!t) return;
-      swiper.slideToLoop(parseInt(t.dataset.index, 10), 600);
-    });
-
-    swiper.on('afterInit', () => {
-      buildBullets();
-      updateBullets();
-    });
-    swiper.on('slideChange', updateBullets);
-
-    if (swiper.initialized) {
-      buildBullets();
-      updateBullets();
-    }
-  </script>
 
   <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
@@ -355,15 +294,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
     integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 800,
-      once: false,
-      mirror: true,
-    });
-  </script>
+
   <script src="./script.js"></script>
 
 </body>
