@@ -22,17 +22,28 @@
 
   <section class="hero-section w-full h-dvh flex items-center overflow-hidden justify-center relative">
 
-    <!-- Slow spinning background -->
-    <div class="flex item-center justify-center h-dvh absolute  md:h-[150vh] overflow-hidden w-full">
-      <img data-aos="fade" src="/images/Hero_Spin.png" class="slow-spin w-[150vw] md:h-[150vh]" alt="">
+    <div class="flex md:item-center items-end justify-center h-dvh absolute md:h-[150vh] md:top-0 overflow-hidden w-full">
+      <div data-parallax data-speed="0.03">
+        <img data-aos="fade" src="/images/Hero_Spin.png" class="slow-spin w-[150vw] scale-200 md:scale-110 md:h-[150vh]" alt="">
+      </div>
     </div>
 
-    <!-- Play button -->
-    <div data-aos="fade-up" data-aos-delay="600" class="flex item-center absolute z-50 bottom-12 justify-center">
-      <a href="https://store.steampowered.com/app/2653470/Little_Problems_A_Cozy_Detective_Game"
-        class="bg-white transition-all duration-500 hover:scale-105 block border-3 border-zinc-800 rounded-xl shadow-2xl px-7 py-3.5 flex items-center gap-2 text-nowrap justify-center font-semibold text-xl">
-        <img src="/images/Steam_64.png" class="h-10" alt="">
-        Play on Steam
+    <div data-aos="fade-up" data-aos-delay="600" class="flex items-center absolute z-50 bottom-12 justify-center">
+      <a href="https://store.steampowered.com/app/2653470/Little_Problems_A_Cozy_Detective_Game" data-parallax
+        data-speed="0.015" class="group relative inline-flex items-center gap-2 rounded-2xl
+              px-7 py-3.5 text-xl font-semibold text-zinc-900
+              bg-gradient-to-b from-white to-zinc-100
+              border-[3px] border-zinc-900
+              shadow-[0_6px_0_0_#27272a9e,0_14px_22px_-10px_rgba(0,0,0,.15)]
+              transition-all duration-200
+              hover:-translate-y-0.5 hover:shadow-[0_8px_0_0_#27272a,0_20px_28px_-12px_rgba(0,0,0,.6)]
+              active:translate-y-1 active:shadow-[0_3px_0_0_#27272a,0_10px_18px_-10px_rgba(0,0,0,.5)]">
+        <span class="pointer-events-none absolute inset-[3px] rounded-xl
+                   shadow-[inset_0_1px_0_rgba(255,255,255,.9),inset_0_-1px_0_rgba(0,0,0,.06)]"></span>
+        <span class="relative z-10 flex items-center gap-2">
+          <img src="/images/Steam_64.png" class="h-10" alt="">
+          Play on Steam
+        </span>
       </a>
     </div>
 
@@ -40,24 +51,25 @@
     <div class="flex item-center justify-center w-full">
       <div class="absolute bottom-0 max-w-7xl w-full flex justify-center items-end mx-auto">
 
-        <!-- Leftmost character -->
-        <img data-aos="zoom-in-up" data-aos-delay="600" src="/images/Hero_Ben.png"
-          class="md:w-full md:block hidden w-40 md:max-w-[17vw] !-mr-28" alt="">
+        <div data-parallax data-speed="0.12" class="md:max-w-[17vw] md:block hidden  !-mr-28 w-40 md:w-full">
+          <img data-aos="zoom-in-up" data-aos-delay="600" src="/images/Hero_Ben.png" class="md:w-full w-40 " alt="">
+        </div>
 
-        <!-- Left character -->
-        <img data-aos="zoom-in-up" data-aos-delay="300" src="/images/Hero_Ethan.png"
-          class="md:w-full w-[50vw] md:max-w-[15vw] z-30 !-mr-24" alt="">
+        <div class="md:w-full w-[50vw] md:max-w-[15vw] z-30 !-mr-24" data-parallax data-speed="0.10">
+          <img data-aos="zoom-in-up" data-aos-delay="300" src="/images/Hero_Ethan.png"
+            class="md:w-full w-[50vw] md:max-w-[15vw] z-30" alt="">
+        </div>
 
         <!-- Center (Mary first) -->
         <div
           class="flex item-center justify-center md:w-full scale-140 md:scale-100 w-40 md:max-w-[14vw] relative z-40 flex-col">
           <!-- Logo bubble comes right after Mary -->
-          <div data-aos="fade" data-aos-delay="1000" class="absolute animate-floating z-50 -top-26">
+          <div data-aos="fade" data-aos-delay="1000" data-parallax data-speed="0.06" class="absolute animate-floating z-50 md:-top-32 -top-20">
             <div class="relative">
-              <img src="/images/LogoBubble_BG.png" class="scale-150" alt="">
-              <div class="flex absolute top-0 gap-2 flex-col">
-                <img src="/images/LogoBubble_Little.png" alt="">
-                <img src="/images/LogoBubble_Problems.png" alt="">
+              <img src="/images/LogoBubble_BG.png" class="md:scale-190 scale-150" alt="">
+              <div class="flex absolute md:-top-2 top-0 md:gap-6 gap-2 flex-col">
+                <img src="/images/LogoBubble_Little.png" class="w-full md:scale-150" alt="">
+                <img src="/images/LogoBubble_Problems.png" class="w-full md:scale-150" alt="">
               </div>
             </div>
           </div>
@@ -65,17 +77,54 @@
             class="md:w-full w-40 md:max-w-[20rem] !-mb-4 z-40" alt="">
         </div>
 
-        <!-- Right character -->
-        <img data-aos="zoom-in-up" data-aos-delay="300" src="/images/Hero_Silvia.png"
-          class="md:w-full w-[50vw] md:max-w-[15vw] z-30 !-ml-16" alt="">
+        <div data-parallax class="md:w-full w-[50vw] md:max-w-[15vw] z-30 !-ml-16" data-speed="0.10">
+          <img data-aos="zoom-in-up" data-aos-delay="300" src="/images/Hero_Silvia.png"
+            class="md:w-full w-[50vw] md:max-w-[15vw] z-30" alt="">
+        </div>
 
-        <!-- Rightmost character -->
-        <img data-aos="zoom-in-up" data-aos-delay="600" src="/images/Hero_Luna.png"
-          class="md:w-full md:block hidden w-40 md:max-w-[17vw] !-ml-28" alt="">
+        <div data-parallax class="md:w-full md:block hidden w-40 md:max-w-[17vw] !-ml-28" data-speed="0.12">
+          <img data-aos="zoom-in-up" data-aos-delay="600" src="/images/Hero_Luna.png"
+            class="md:w-full md:block hidden w-40 md:max-w-[17vw] " alt="">
+        </div>
       </div>
     </div>
 
   </section>
+
+
+
+
+  <script>
+    (() => {
+      const els = Array.from(document.querySelectorAll('[data-parallax]'));
+      if (!els.length) return;
+
+      // Reduce intensity a bit on small screens
+      const scale = window.matchMedia('(max-width: 768px)').matches ? 0.7 : 1;
+
+      let lastY = window.scrollY, ticking = false;
+
+      function onScroll() {
+        lastY = window.scrollY;
+        if (!ticking) {
+          window.requestAnimationFrame(apply);
+          ticking = true;
+        }
+      }
+
+      function apply() {
+        els.forEach(el => {
+          const s = parseFloat(el.dataset.speed || '0.1') * scale;
+          el.style.transform = `translate3d(0, ${lastY * s}px, 0)`;
+        });
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      // Initial position
+      apply();
+    })();
+  </script>
 
 
   <section class="section2 relative overflow-x-hidden bg-gradient-to-b from-[#3a5074] to-[#69afa1] md:min-h-screen">
@@ -89,7 +138,8 @@
         </div>
 
         <!-- Title -->
-        <h2 data-aos="fade-up" class="font-bold text-stroke md:text-5xl text-4xl md:text-6xl text-[#fdeac4] leading-none young">
+        <h2 data-aos="fade-up"
+          class="font-bold text-stroke md:text-5xl text-4xl md:text-6xl text-[#fdeac4] leading-none young">
           Trailer
         </h2>
 
@@ -213,28 +263,28 @@
     </div>
   </section>
 
-  <section data-aos="fade" class="">
+  <section data-aos="fade" class="md:h-screen">
     <div class="swiper mySwiper h-full">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="/ss/ss01.jpg" class="w-full h-full object-bottom object-cover block" alt="">
+        <div class="swiper-slide"><img src="/ss/ss01.jpg" class="w-full h-full object-bottom block" alt="">
         </div>
-        <div class="swiper-slide"><img src="/ss/ss02.jpg" class="w-full h-full object-cover object-bottom block" alt="">
+        <div class="swiper-slide"><img src="/ss/ss02.jpg" class="w-full h-full object-bottom block" alt="">
         </div>
-        <div class="swiper-slide"><img src="/ss/ss03.jpg" class="w-full h-full object-cover object-bottom block" alt="">
+        <div class="swiper-slide"><img src="/ss/ss03.jpg" class="w-full h-full object-bottom block" alt="">
         </div>
-        <div class="swiper-slide"><img src="/ss/ss04.jpg" class="w-full h-full object-cover object-bottom block" alt="">
+        <div class="swiper-slide"><img src="/ss/ss04.jpg" class="w-full h-full object-bottom block" alt="">
         </div>
-        <div class="swiper-slide"><img src="/ss/ss05.jpg" class="w-full h-full object-cover object-bottom block" alt="">
+        <div class="swiper-slide"><img src="/ss/ss05.jpg" class="w-full h-full object-bottom block" alt="">
         </div>
-        <div class="swiper-slide"><img src="/ss/ss06.jpg" class="w-full h-full object-cover object-bottom block" alt="">
+        <div class="swiper-slide"><img src="/ss/ss06.jpg" class="w-full h-full object-bottom block" alt="">
         </div>
-        <div class="swiper-slide"><img src="/ss/ss07.jpg" class="w-full h-full object-cover object-bottom block" alt="">
+        <div class="swiper-slide"><img src="/ss/ss07.jpg" class="w-full h-full object-bottom block" alt="">
         </div>
-        <div class="swiper-slide"><img src="/ss/ss08.jpg" class="w-full h-full object-cover object-bottom block" alt="">
+        <div class="swiper-slide"><img src="/ss/ss08.jpg" class="w-full h-full object-bottom block" alt="">
         </div>
-        <div class="swiper-slide"><img src="/ss/ss09.jpg" class="w-full h-full object-cover object-bottom block" alt="">
+        <div class="swiper-slide"><img src="/ss/ss09.jpg" class="w-full h-full object-bottom block" alt="">
         </div>
-        <div class="swiper-slide"><img src="/ss/ss10.jpg" class="w-full h-full object-cover object-bottom block" alt="">
+        <div class="swiper-slide"><img src="/ss/ss10.jpg" class="w-full h-full object-bottom block" alt="">
         </div>
       </div>
 

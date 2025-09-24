@@ -37,7 +37,6 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 
 @keyframes float {
@@ -75,4 +74,9 @@
 .text-stroke {
   -webkit-text-stroke: 0.4px #370717;
   text-stroke: 0.4px #370717;
+}
+
+[data-parallax] {
+  will-change: transform;
+  transform: translateZ(0);
 }
